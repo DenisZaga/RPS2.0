@@ -4,7 +4,8 @@ import CreateGame from "@/components/CreateGame";
 
 export default function Home() {
   return (
-    <main  >
+    <main>
+        
       <CreateGame />
       <GameList />
     </main>
