@@ -29,7 +29,7 @@ export default function CreateGame({ updateGames }) {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center  bg-gray-100 p-6">
+        <div className="flex flex-col items-center justify-center  bg-gray-200 p-6">
             <h1 className="text-2xl font-bold mb-6">Add New Game</h1>
             <div className="flex space-x-2">
                 <input

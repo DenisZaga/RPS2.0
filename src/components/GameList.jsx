@@ -26,8 +26,9 @@ export default async function GameList() {
     return (
       <>
         
-            <div className='max-w-4xl m-auto'>
-              <div className="bg-gray-200 p-4 rounded-lg">
+            <div className=' bg-gray-200 '>
+              <div className='max-w-4xl m-auto'>
+              <div className="p-4 rounded-lg">
                   <p className="font-bold">Available games:</p>
                   <ul className="flex flex-col gap-2">
                       {games.map((g) => (
@@ -39,6 +40,7 @@ export default async function GameList() {
                           </li>
                       ))}
                   </ul>
+              </div>
               </div>
             </div>
         

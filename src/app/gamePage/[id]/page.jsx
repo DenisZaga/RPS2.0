@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/navbar";
 
 export default function AddTopic() {
   const [players, setPlayers] = useState("");
@@ -31,6 +32,10 @@ export default function AddTopic() {
   };
 
   return (
+    <>
+    <Navbar />
     <h1>Game page</h1>
+    <a href="/dashboard">Back</a>
+    </>
   );
 }
