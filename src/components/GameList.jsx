@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSession } from "next-auth/react";
 
 export const getGames = async () => {
   try {
@@ -19,13 +20,8 @@ export const getGames = async () => {
 
 export default async function GameList() {
     const { games } = await getGames();
-
-
-
-
     return (
       <>
-        
             <div className=' bg-gray-200 '>
               <div className='max-w-4xl m-auto'>
               <div className="p-4 rounded-lg">

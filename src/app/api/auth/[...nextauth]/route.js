@@ -1,5 +1,6 @@
 import connectMongoDB from "@/lib/mongodb";
 import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider from "next-auth/providers/github";
 import User from "@/models/user";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -11,16 +12,20 @@ export const authOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET
+    }),
     CredentialsProvider({
-      name: "credentials",
+      email: "credentials",
       credentials: {},
 
       async authorize(credentials) {
-        const { name, password } = credentials;
+        const { email, password } = credentials;
 
         try {
           await connectMongoDB();
-          const user = await User.findOne({ name });
+          const user = await User.findOne({ email });
 
           if (!user) {
             return null;
@@ -45,6 +50,31 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/",
+  },
+  callbacks: {
+    async signIn({ user, account }) {
+      if (account.provider === "google" || account.provider === "github") {
+        const { name, email } = user;
+        try {
+          await connectMongoDB();
+          const userExists = await User.findOne({ email });
+
+          if (!userExists) {
+            const fakePassword = await bcrypt.hash(`${account.provider}-oauth-password`, 10);
+            await User.create({
+              name,
+              email,
+              password: fakePassword, // Вигаданий пароль
+            });
+          }
+        } catch (error) {
+          console.log(error);
+          return false; // Відхилити вхід у разі помилки
+        }
+      }
+
+      return true; // Дозволити вхід
+    },
   },
 };
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { getGames } from './GameList';
 
 
+
 export default function CreateGame({ updateGames }) {
     const [gameName, setGameName] = useState('');
 

@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -17,7 +18,7 @@ export default function LoginForm() {
 
     try {
       const res = await signIn("credentials", {
-        name,
+        email,
         password,
         redirect: false,
       });
@@ -40,9 +41,9 @@ export default function LoginForm() {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             type="text"
-            placeholder="Name"
+            placeholder="Email"
           />
           <input
             onChange={(e) => setPassword(e.target.value)}
@@ -62,7 +63,24 @@ export default function LoginForm() {
             Don't have an account? <span className="underline">Register</span>
           </Link>
         </form>
+        <div className="mt-4 flex items-center justify-between">
+                <span className="border-b w-1/5 lg:w-1/4"></span>
+                <a href="#" className="text-xs text-center text-gray-500 uppercase">or </a>
+                <span className="border-b w-1/5 lg:w-1/4"></span>
+            </div>
+
+          <button onClick={() => signIn("google")} className="w-full mt-2 px-4 py-2 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
+          <img className="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
+            <span className="text-black">Sign in with Google</span>
+          </button>
+        
+
+          <button onClick={() => signIn("github")} className="w-full px-4 mt-2 py-2 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
+          <img className="w-6 h-6" src="https://www.svgrepo.com/show/512317/github-142.svg" loading="lazy" alt="google logo"/>
+            <span className="text-black">Sign in with Github</span>
+          </button>
       </div>
     </div>
   );
 }
+
