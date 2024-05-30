@@ -5,8 +5,5 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export default async function Register() {
   const session = await getServerSession(authOptions);
-
- 
-
   return <RegisterForm />;
 }

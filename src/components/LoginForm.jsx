@@ -70,13 +70,13 @@ export default function LoginForm() {
             </div>
 
           <button onClick={() => signIn("google")} className="w-full mt-2 px-4 py-2 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
-          <img className="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo"/>
+          <Image className="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" width={30} height={30}/>
             <span className="text-black">Sign in with Google</span>
           </button>
         
 
           <button onClick={() => signIn("github")} className="w-full px-4 mt-2 py-2 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150">
-          <img className="w-6 h-6" src="https://www.svgrepo.com/show/512317/github-142.svg" loading="lazy" alt="google logo"/>
+          <Image className="w-6 h-6" src="https://www.svgrepo.com/show/512317/github-142.svg" loading="lazy" alt="google logo" width={30} height={30}/>
             <span className="text-black">Sign in with Github</span>
           </button>
       </div>

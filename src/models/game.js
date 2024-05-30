@@ -1,19 +1,21 @@
-import mongoose, {Schema} from "mongoose";
-import { stringify } from "postcss";
+import mongoose from 'mongoose';
 
-const gameSchema = new Schema(
-    {
-        name: String,
-        players: [
-            { type: String } 
-        ],
-        result: String,
-    },
-    {
-        timestamps: true 
-    }
-);
+const gameSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  player: {
+    type: Array,
+    default: [],
+  },
+  result: {
+    type: String,
+    default: '',
+  },
+});
 
-const Game = mongoose.models.Game|| mongoose.model('Game', gameSchema);
+export const Game = mongoose.models?.Game || mongoose.model('Game', gameSchema);
 
-export default Game;
+
+// export const Game = mongoose.models?.Game || mongoose.model('Game', gameSchema);
