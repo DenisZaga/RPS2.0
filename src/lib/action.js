@@ -12,7 +12,9 @@ export const createInitialgame = async (prevState, formData) => {
       name
     });
 
-    await newGame.save();
+    await newGame.save().then(
+      res => {console.log(res);}
+    );
     console.log("saved to db");
 
   } catch (err) {
