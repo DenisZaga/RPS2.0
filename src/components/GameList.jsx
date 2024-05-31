@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 import { getGames } from '@/lib/data';
@@ -13,7 +14,7 @@ export default async function GameList() {
                         {games.map((g) => (
                             <li key={g.id} className="flex items-center justify-between">
                                 <div>{g.name}</div>
-                                <Link href={`https://deft-gumdrop-8fab1d.netlify.app/gamePage/${g.id}`} className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2">Join</Link>
+                                <Link href={`/gamePage/${g.id}`} className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2">Join</Link>
                             </li>
                         ))}
                     </ul>

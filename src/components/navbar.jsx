@@ -57,7 +57,7 @@ export default function Navbar() {
             className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
           >
             {id === 5 ? (
-              <button  onClick={() => signOut({callbackUrl: 'https://deft-gumdrop-8fab1d.netlify.app/'})}>{name}</button>
+              <button  onClick={() => signOut({callbackUrl: '/'})}>{name}</button>
             ) : (
               <Link href={`/${link}`}>{name}</Link>
             )}

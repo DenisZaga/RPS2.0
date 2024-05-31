@@ -1,11 +1,13 @@
-// components/CreateGame.jsx
 'use client';
+
 import { createInitialgame } from '@/lib/action';
 import { useFormState } from "react-dom";
 
 const AddGameForm = () => {
   const [state, formAction] = useFormState(createInitialgame, undefined);
-
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <div className="flex flex-col items-center justify-center bg-gray-200 p-6">
       <div className="flex space-x-2">
@@ -15,9 +17,11 @@ const AddGameForm = () => {
             className="p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
     
-          <button className="bg-green-500 text-white p-2 rounded-r-lg hover:bg-green-600">
-            Add
-          </button>
+          
+            <button type="submit" onClick={refreshPage} className="bg-green-500 text-white p-2 rounded-r-lg hover:bg-green-600">
+              Add
+            </button>
+          
         </form>
         {state?.error && <div className="text-red-500">{state.error}</div>}
         {state?.success && <div className="text-green-500">{state.success}</div>}

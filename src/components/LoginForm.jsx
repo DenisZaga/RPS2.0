@@ -59,7 +59,7 @@ export default function LoginForm() {
             </div>
           )}
 
-          <Link className="text-sm mt-3 text-right" href={"https://deft-gumdrop-8fab1d.netlify.app/register"}>
+          <Link className="text-sm mt-3 text-right" href={"/register"}>
             Do not have an account? <span className="underline">Register</span>
           </Link>
         </form>

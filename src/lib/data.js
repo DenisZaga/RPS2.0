@@ -1,3 +1,4 @@
+'use server'
 import {Game} from "@/models/game";
 import connectMongoDB from "./mongodb";
 import { unstable_noStore as noStore } from "next/cache";
