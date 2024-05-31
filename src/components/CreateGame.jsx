@@ -6,7 +6,7 @@ import { useFormState } from "react-dom";
 const AddGameForm = () => {
   const [state, formAction] = useFormState(createInitialgame, undefined);
   function refreshPage() {
-    window.location.reload(false);
+    window.location.reload(true);
   }
   return (
     <div className="flex flex-col items-center justify-center bg-gray-200 p-6">
