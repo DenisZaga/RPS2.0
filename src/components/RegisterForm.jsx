@@ -21,7 +21,7 @@ export default function RegisterForm() {
     }
 
     try {
-      const resUserExists = await fetch("api/userExists", {
+      const resUserExists = await fetch("https://deft-gumdrop-8fab1d.netlify.app/api/userExists", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ export default function RegisterForm() {
             </div>
           )}
 
-          <Link className="text-sm mt-3 text-right" href={"/"}>
+          <Link className="text-sm mt-3 text-right" href={"https://deft-gumdrop-8fab1d.netlify.app/"}>
             Already have an account? <span className="underline">Login</span>
           </Link>
         </form>

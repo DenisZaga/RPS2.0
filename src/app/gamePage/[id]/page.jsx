@@ -98,7 +98,7 @@ export default function GamePage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/games", {
+      const res = await fetch("https://deft-gumdrop-8fab1d.netlify.app/api/games", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
