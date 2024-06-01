@@ -10,26 +10,21 @@ export default function Navbar() {
   const links = [
     {
       id: 1,
-      link: "home",
-      name: "Home"
+      link: "dashboard",
+      name: "Dashboard"
     },
     {
       id: 2,
-      link: "about",
-      name: "About"
+      link: "statistics",
+      name: "Statistics"
     },
     {
       id: 3,
-      link: "portfolio",
-      name: "Portfolio"
+      link: "random-result",
+      name: "Random result"
     },
     {
       id: 4,
-      link: "experience",
-      name: "Experience"
-    },
-    {
-      id: 5,
       link: "contact",
       name: "Signout"
     },
@@ -56,7 +51,7 @@ export default function Navbar() {
             key={id}
             className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
           >
-            {id === 5 ? (
+            {id === 4 ? (
               <button  onClick={() => signOut({callbackUrl: '/'})}>{name}</button>
             ) : (
               <Link href={`/${link}`}>{name}</Link>
