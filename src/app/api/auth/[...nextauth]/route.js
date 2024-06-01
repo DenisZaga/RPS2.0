@@ -49,7 +49,7 @@ export const authOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "https://deft-gumdrop-8fab1d.netlify.app//",
+    signIn: "/",
   },
   callbacks: {
     async signIn({ user, account }) {
