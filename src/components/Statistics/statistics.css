@@ -1,50 +1,79 @@
-.statistics__wrapper {
+/* Загальний стиль для всієї сторінки */
+body {
+    background-color: #F0F0F0; /* Сірий фон */
+    font-family: sans-serif;
+  }
+  
+  /* Контейнер для статистики */
+  .statistics__wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
     align-items: center;
-
     padding-inline: 20px;
-}
-
-.statistics__mainTitle {
+  }
+  
+  /* Заголовок "Statistics" */
+  .statistics__mainTitle {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-}
-
-.statistics__randomGame,
-.statistics__completedGames,
-.statistics__bestPlayers,
-.statistics__worstPlayers {
-    border: 1px solid black;
+    margin-bottom: 40px; /* Додано відступ знизу */
+  }
+  
+  /* Блоки статистики */
+  .statistics__randomGame,
+  .statistics__completedGames,
+  .statistics__bestPlayers,
+  .statistics__worstPlayers {
+    background-color: white; /* Білий фон всередині рамки */
+    border: 1px solid #CCC; /* Сірий колір рамки */
     padding: 20px;
     border-radius: 10px;
-
     width: 50%;
-}
-
-.statistics__secondaryTitle {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-
-.statistics__viewAllGamesButton {
+  }
+  
+  /* Вторинний заголовок у блоках статистики */
+  .statistics__secondaryTitle {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  /* Кнопка "Переглянути всі ігри" */
+  .statistics__viewAllGamesButton {
     font-size: 25px;
     font-weight: bold;
-}
-
-.statistics__viewAllGamesButton:hover {
-    color: blue;
-    transition: 0.5s;
-}
-
-.statistic__joinButton {
+    color: white; /* Білий текст */
     cursor: pointer;
-    color: green;
-    font-weight: bold;
+    background-color: #22c55e; /* Зелений фон */
+    padding: 5px 12px; /* Внутрішній відступ */
     border: none;
-    border-radius: 5px;
-}
+    border-radius: 5px; /* Заокруглені кути */
+    display: block; /* Забезпечує блочне розміщення кнопки */
+    margin: 0 auto; /* Автоматично центрує кнопку по горизонталі */
+    margin-bottom: 20px;
+    transition: 0.5s;
+
+  }
+  
+  .statistics__viewAllGamesButton:hover {
+    background-color: green; /* Темніший зелений колір при наведенні */
+  }
+  
+  /* Кнопка "Приєднатися" */
+  .statistic__joinButton {
+    cursor: pointer;
+    background-color: #22c55e; /* Зелений фон */
+    color: white; /* Білий текст */
+    padding: 5px 12px; /* Внутрішній відступ */
+    border: none;
+    border-radius: 5px; /* Заокруглені кути */
+    font-size: 18px; /* Розмір шрифту */
+    font-weight: bold; /* Жирний шрифт */
+    transition: background-color 0.3s; /* Плавний перехід кольору при наведенні */
+  }
+  
+  .statistic__joinButton:hover {
+    background-color: green; /* Темніший зелений колір при наведенні */
+  }
+  
