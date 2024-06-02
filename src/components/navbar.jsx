@@ -28,16 +28,9 @@ export default function Navbar() {
   return (
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black nav">
       <div>
-        <h1 className="text-5xl font-signature ml-2">
-          <a
-            className="link-underline link-underline-black"
-            href=""
-            target="_blank"
-            rel="noreferrer"
-          >
-            Logo
-          </a>
-        </h1>
+        <a href="/" className="flex items-center">
+          <img src="/images/logo.png" alt="Logo" className="h-12 w-12 object-contain" />
+        </a>
       </div>
 
       <ul className="hidden md:flex">
@@ -47,7 +40,7 @@ export default function Navbar() {
             className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
           >
             {id === 4 ? (
-              <button  onClick={() => signOut({callbackUrl: '/'})}>{name}</button>
+              <button onClick={() => signOut({ callbackUrl: '/' })}>{name}</button>
             ) : (
               <Link href={`/${link}`}>{name}</Link>
             )}
