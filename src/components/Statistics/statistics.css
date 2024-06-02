@@ -1,0 +1,50 @@
+.statistics__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    align-items: center;
+
+    padding-inline: 20px;
+}
+
+.statistics__mainTitle {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.statistics__randomGame,
+.statistics__completedGames,
+.statistics__bestPlayers,
+.statistics__worstPlayers {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+
+    width: 50%;
+}
+
+.statistics__secondaryTitle {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+
+.statistics__viewAllGamesButton {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.statistics__viewAllGamesButton:hover {
+    color: blue;
+    transition: 0.5s;
+}
+
+.statistic__joinButton {
+    cursor: pointer;
+    color: green;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}

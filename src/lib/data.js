@@ -8,17 +8,31 @@ import { unstable_noStore as noStore } from "next/cache";
 export const getGames = async () => {
   noStore();
     try {
-        connectMongoDB();
-        const games = await Game.find();
-        return games;
-      } catch (err) {
-        console.log(err);
-        throw new Error("Failed to fetch game!");
-      }
-  };
+      connectMongoDB();
+      const games = await Game.find();
+      return games;
+    } catch (err) {
+      console.log(err);
+      throw new Error("Failed to fetch game!");
+    }
+};
+
+export const getRandomGame = async () => {
+  noStore();
+    try {
+      connectMongoDB();
+      const games = await Game.find();
+      const randomIndex = Math.floor(Math.random() * games.length);
+      return games[randomIndex];
+    } catch (err) {
+      console.log(err);
+      throw new Error("Failed to fetch game!");
+    }
+
+}
 
 
-  export const getUser = async (id) => {
+export const getUser = async (id) => {
     noStore();
     try {
       connectMongoDB();
@@ -28,4 +42,4 @@ export const getGames = async () => {
       console.log(err);
       throw new Error("Failed to fetch user!");
     }
-  };
+};

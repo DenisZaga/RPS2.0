@@ -19,11 +19,6 @@ export default function Navbar() {
       name: "Statistics"
     },
     {
-      id: 3,
-      link: "random-result",
-      name: "Random result"
-    },
-    {
       id: 4,
       link: "contact",
       name: "Signout"
