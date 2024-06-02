@@ -9,7 +9,7 @@ export default async function GameList() {
         <div className='bg-gray-200'>
             <div className='max-w-4xl m-auto'>
                 <div className="p-4 rounded-lg">
-                    <p className="font-bold">Available games:</p>
+                    <p className="font-bold m-auto mt-0 mb-0 block">Available games:</p>
                     <ul className="flex flex-col-reverse gap-2">
                         {games.map((g) => (
                             <li key={g.id} className="flex items-center justify-between">

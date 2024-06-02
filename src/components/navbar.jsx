@@ -20,7 +20,7 @@ export default function Navbar() {
     },
     {
       id: 4,
-      link: "contact",
+      link: "http://localhost:3001",
       name: "Signout"
     },
   ];
@@ -29,14 +29,13 @@ export default function Navbar() {
     <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black nav">
       <div>
         <h1 className="text-5xl font-signature ml-2">
-          <a
+          <Link
             className="link-underline link-underline-black"
-            href=""
-            target="_blank"
+            href="/dashboard"
             rel="noreferrer"
           >
             Logo
-          </a>
+          </Link>
         </h1>
       </div>
 

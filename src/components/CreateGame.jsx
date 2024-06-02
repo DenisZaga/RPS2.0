@@ -12,7 +12,7 @@ const AddGameForm = () => {
     <div className="flex flex-col items-center justify-center bg-gray-200 p-6">
       <div className="flex space-x-2">
         <form action={formAction}>
-          <h1 className="text-2xl font-bold mb-6">Add New Game</h1>
+          <h1 className="text-2xl font-bold mb-6 mt-0 mb-0 m-auto">Add New Game</h1>
           <input type="text" name='name' placeholder="Enter game name"
             className="p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

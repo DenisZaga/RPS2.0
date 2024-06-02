@@ -20,7 +20,7 @@ export default async function Statistics() {
                     <h2>{randomGame.name}</h2>
                     {
                         randomGame.result
-                            ? <p>Result: {randomGame.result}</p>
+                            ? <p>Winner: {randomGame.result}</p>
                             : <p>Game is not over yet. <br />
                                 <Link href={`/gamePage/${randomGame.id}`} className="statistic__joinButton">Join</Link>
                             </p>
@@ -63,7 +63,7 @@ export default async function Statistics() {
                     gamesWithResult.map((g) => (
                         <div key={g.id}>
                             <h2>{g.name}</h2>
-                            <p>Result: {g.result}</p>
+                            <p>Winner: {g.result}</p>
                             <br />
                         </div>
                     ))
@@ -87,7 +87,7 @@ export default async function Statistics() {
                 ))}
             </ul>
         </div>
-            <Link href="/dashboard" className='statistics__viewAllGamesButton'>View all games</Link>
+            <Link href="/dashboard" className='statistics__viewAllGamesButton'>View available games</Link>
         </div>
     </>
   )

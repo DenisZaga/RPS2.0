@@ -17,6 +17,18 @@ export const getGames = async () => {
     }
 };
 
+export const getGameById = async (id) =>{
+  noStore()
+  try{
+    connectMongoDB();
+    const gamebyId = await Game.findById(id)
+    return gamebyId
+  }catch{
+    console.log(err);
+    throw new Error("Failed to fetch game!");
+  }
+}
+
 export const getRandomGame = async () => {
   noStore();
     try {
@@ -30,7 +42,6 @@ export const getRandomGame = async () => {
     }
 
 }
-
 
 export const getUser = async (id) => {
     noStore();
