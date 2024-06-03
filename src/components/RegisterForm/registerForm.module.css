@@ -2,13 +2,22 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  
   gap: 30px;
+  margin-inline: auto;
+  margin-top: 30px;
+  padding: 20px;
+
+  width: 500px;
+
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 .form input{
   padding: 20px;
-  background-color: var(--bg);
-  color: var(--textColor);
+  background-color: rgb(218, 218, 218);
+  color: black;
   border: none;
   border-radius: 5px;
 }
@@ -16,11 +25,16 @@
 .form button{
   padding: 20px;
   cursor: pointer;
-  background-color: var(--btn);
-  color: var(--textColor);
+  background-color: rgb(218, 218, 218);
+  border: 1px solid rgb(218, 218, 218);
   font-weight: bold;
-  border: none;
   border-radius: 5px;
+}
+
+.form button:hover{
+  background-color: rgb(247, 247, 247);
+  border: 1px solid rgb(218, 218, 218);
+  transition: 0.5s;
 }
 
 .error {
