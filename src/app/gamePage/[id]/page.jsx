@@ -11,7 +11,7 @@ import Navbar from "@/components/navbar";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 
-const socket = io('http://localhost:3001');
+const socket = io('https://rockessayscissors.online/');
 
 const GamePage = ({ params }) => {
   const { data: session } = useSession();
