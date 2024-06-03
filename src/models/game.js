@@ -16,6 +16,3 @@ const gameSchema = new mongoose.Schema({
 });
 
 export const Game = mongoose.models?.Game || mongoose.model('Game', gameSchema);
-
-
-// export const Game = mongoose.models?.Game || mongoose.model('Game', gameSchema);

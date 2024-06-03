@@ -1,6 +1,6 @@
 "use client";
 
-import { register } from '@/lib/action'; // Assuming this handles registration logic
+import { register } from '@/lib/action'; 
 import Link from "next/link";
 import { useFormState } from "react-dom";
 import styles from "./registerForm.module.css";
@@ -13,7 +13,7 @@ export default function RegisterForm() {
   const router = useRouter();
 
   useEffect(() => {
-    state?.success && router.push("/"); // Redirect on successful registration
+    state?.success && router.push("/"); 
   }, [state?.success, router]);
 
   return (

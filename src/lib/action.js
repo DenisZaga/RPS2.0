@@ -1,4 +1,3 @@
-// lib/action.js
 'use server';
 import User from '@/models/user';
 import connectMongoDB from "./mongodb";
@@ -11,7 +10,9 @@ export const createInitialgame = async (prevState, formData) => {
   try {
     connectMongoDB();
     const newGame = new Game({
-      name
+      name,
+      players: [],
+      result: ''
     });
 
     await newGame.save().then(

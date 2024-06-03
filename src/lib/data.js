@@ -17,17 +17,18 @@ export const getGames = async () => {
     }
 };
 
-export const getGameById = async (id) =>{
-  noStore()
-  try{
-    connectMongoDB();
-    const gamebyId = await Game.findById(id)
-    return gamebyId
-  }catch{
-    console.log(err);
-    throw new Error("Failed to fetch game!");
+export const updateGameInDatabase = async (gameId, players, result) => {
+  try {
+    await Game.findByIdAndUpdate(
+      gameId,
+      { player: players, result: result },
+      { new: true }
+    );
+    console.log(`Game ${gameId} updated successfully`);
+  } catch (error) {
+    console.log(`Error updating game ${gameId}:`, error);
   }
-}
+};
 
 export const getRandomGame = async () => {
   noStore();

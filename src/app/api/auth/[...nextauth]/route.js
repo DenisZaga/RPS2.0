@@ -64,16 +64,16 @@ export const authOptions = {
             await User.create({
               name,
               email,
-              password: fakePassword, // Вигаданий пароль
+              password: fakePassword,
             });
           }
         } catch (error) {
           console.log(error);
-          return false; // Відхилити вхід у разі помилки
+          return false; 
         }
       }
 
-      return true; // Дозволити вхід
+      return true;
     },
   },
 };
