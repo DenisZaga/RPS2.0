@@ -1,6 +1,6 @@
-/* Загальний стиль для всієї сторінки */
+
 body {
-    background-color: #F0F0F0; /* Сірий фон */
+    background-color: rgb(229, 231, 235); 
     font-family: sans-serif;
   }
   
@@ -18,7 +18,7 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    margin-bottom: 40px; /* Додано відступ знизу */
+    margin: 20px 0; /* Додано відступ знизу */
   }
   
   /* Блоки статистики */
@@ -30,9 +30,16 @@ body {
     border: 1px solid #CCC; /* Сірий колір рамки */
     padding: 20px;
     border-radius: 10px;
-    width: 50%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
   }
-  
+  .statistics__completedGames-inner{
+
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+
+  }
   /* Вторинний заголовок у блоках статистики */
   .statistics__secondaryTitle {
     font-size: 2em;
@@ -42,7 +49,6 @@ body {
   /* Кнопка "Переглянути всі ігри" */
   .statistics__viewAllGamesButton {
     font-size: 25px;
-    font-weight: bold;
     color: white; /* Білий текст */
     cursor: pointer;
     background-color: #22c55e; /* Зелений фон */
@@ -53,7 +59,6 @@ body {
     margin: 0 auto; /* Автоматично центрує кнопку по горизонталі */
     margin-bottom: 20px;
     transition: 0.5s;
-
   }
   
   .statistics__viewAllGamesButton:hover {
@@ -77,3 +82,15 @@ body {
     background-color: green; /* Темніший зелений колір при наведенні */
   }
   
+
+  @media (max-width: 920px) {
+    .statistics__completedGames-inner{
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .statistics__completedGames-inner{
+      grid-template-columns: 100%;
+    }
+  }

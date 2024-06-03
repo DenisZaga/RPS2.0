@@ -11,7 +11,7 @@ export default function UserInfo() {
 
   return (
     <div className="grid place-items-center bg-gray">
-      <div className="p-2 border border-gray-300 rounded-lg bg-white">
+      <div className="p-2 border border-gray-200 rounded-lg bg-white">
         <div>
           Hello, <span className="font-bold">{session?.user?.name}</span>!
         </div>

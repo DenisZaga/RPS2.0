@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { getGames } from '@/lib/data';
+import { getAvailableGames } from '@/lib/data';
 
 export default async function GameList() {
-  const games = await getGames();
+  const games = await getAvailableGames();
 
   return (
     <div className='bg-gray-200'>

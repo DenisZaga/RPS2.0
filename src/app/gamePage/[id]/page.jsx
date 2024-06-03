@@ -9,7 +9,6 @@ import paper from '../../../images/paper-user.png';
 import scissors from '../../../images/scissors-user.png';
 import Navbar from "@/components/navbar";
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
 
 const socket = io('https://node-server-0i65.onrender.com');
 
@@ -19,7 +18,8 @@ const GamePage = ({ params }) => {
   const [choice, setChoice] = useState(null);
   const [result, setResult] = useState(null);
   const { id: gameId } = params; 
-  
+ 
+
   useEffect(() => {
     if (session?.user?.name && gameId) {
       socket.emit('joinGame', { gameId, playerName: session.user.name });
@@ -60,27 +60,39 @@ const GamePage = ({ params }) => {
   return (
     <>
       <Navbar />
-      <div className="">
+      <div className="m-4">
         <div className="grid place-items-center">
+          
         </div>
-        <div className="flex justify-center align-center m-5">
-          {Object.values(players).slice(0, 2).map(player => (
-            <div key={player.id}>
-              <span className="font-bold">{player.name}</span>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-row justify-evenly m-5">
-          <button onClick={() => makeChoice('rock')}><Image src={rock} alt="rock" height={200} width={200} /></button>
-          <button onClick={() => makeChoice('paper')}><Image src={paper} alt="paper" height={200} width={200} /></button>
-          <button onClick={() => makeChoice('scissors')}><Image src={scissors} alt="scissors" height={200} width={200} /></button>
+        <div className="flex justify-center items-center m-5">
+        {Object.values(players).slice(0, 2).map((player, index) => (
+          <div key={player.id} className="flex items-center">
+            {index === 1 && <span className="mx-2 font-bold">VS</span>}
+            <span className="font-bold">{player.name}</span>
+          </div>
+        ))}
+      </div>
+        
+        <div className="flex flex-col justify-evenly m-5">
+          <h2 className="text-center m-4">Choose!</h2>
+          <div className="flex justify-evenly">
+            <button onClick={() => makeChoice('rock')}><Image src={rock} alt="rock" height={200} width={200} /></button>
+            <button onClick={() => makeChoice('paper')}><Image src={paper} alt="paper" height={200} width={200} /></button>
+            <button onClick={() => makeChoice('scissors')}><Image src={scissors} alt="scissors" height={200} width={200} /></button>
+          </div>
         </div>
         {result && <div className="result">Result: {result}</div>}
+        <Link href='/dashboard' legacyBehavior>
+      <a 
+        onClick={() => socket.emit('disconnectUser')}
+        className="mt-5 inline-block px-6 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+      >
+        Back
+      </a>
+    </Link>
       </div>
       
-      <Link href='/dashboard' legacyBehavior>
-        <a onClick={() => socket.emit('disconnectUser')}>Back</a>
-      </Link>
+     
     </>
   );
 };

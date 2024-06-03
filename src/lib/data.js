@@ -17,6 +17,18 @@ export const getGames = async () => {
     }
 };
 
+export const getAvailableGames = async () => {
+  noStore();
+    try {
+      connectMongoDB();
+      const games = await Game.find({ result: '' });
+      return games;
+    } catch (err) {
+      console.log(err);
+      throw new Error("Failed to fetch game!");
+    }
+};
+
 export const updateGameInDatabase = async (gameId, players, result) => {
   try {
     await Game.findByIdAndUpdate(
@@ -55,3 +67,16 @@ export const getUser = async (id) => {
       throw new Error("Failed to fetch user!");
     }
 };
+
+
+export const getGameById = async (gameId)=>{
+  noStore();
+  try {
+    await connectMongoDB();
+    const game = await Game.findById(gameId, 'name'); // Повертаємо тільки поле name
+    return game ? game.name : null;
+} catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch game name!");
+}
+}

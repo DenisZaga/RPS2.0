@@ -58,20 +58,23 @@ export default async function Statistics() {
             <RandomGame />
 
             <div className='statistics__completedGames'>
-                <h2 className='statistics__secondaryTitle'>Completed games: </h2>
-                {
-                    gamesWithResult.map((g) => (
-                        <div key={g.id}>
-                            <h2>{g.name}</h2>
-                            <p>Winner: {g.result}</p>
-                            <br />
-                        </div>
-                    ))
-                }
+            <h2 className='statistics__secondaryTitle'>Completed games</h2>
+                <div className="statistics__completedGames-inner">
+                    
+                    {
+                        gamesWithResult.map((g) => (
+                            <div key={g.id}>
+                                <h2 className='font-bold'>Game: <span className='font-normal'>{g.name}</span></h2>
+                                <p>{g.result === 'draw' ? 'Result' : 'Winner'}: {g.result}</p>
+                                <br />
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
 
         <div className='statistics__bestPlayers'>
-            <h2 className='statistics__secondaryTitle'>Best players:</h2>
+            <h2 className='statistics__secondaryTitle'>Best players</h2>
             <ul>
                 {bestPlayers.map(player => (
                     <li key={player}>{player} - {playerFrequency[player]} {playerFrequency[player] === 1 ? 'win' : 'wins'}</li>
@@ -80,7 +83,7 @@ export default async function Statistics() {
         </div>
 
         <div className='statistics__worstPlayers'>
-            <h2 className='statistics__secondaryTitle'>Worst players:</h2>
+            <h2 className='statistics__secondaryTitle'>Worst players</h2>
             <ul>
                 {worstPlayers.map(player => (
                     <li key={player}>{player} - {playerFrequency[player]} {playerFrequency[player] === 1 ? 'win' : 'wins'}</li>
