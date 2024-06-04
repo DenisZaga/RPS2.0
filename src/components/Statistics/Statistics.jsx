@@ -22,7 +22,8 @@ export default async function Statistics() {
                         randomGame.result
                             ? <p>Winner: {randomGame.result}</p>
                             : <p>Game is not over yet. <br />
-                                <Link href={`/gamePage/${randomGame.id}`} className="statistic__joinButton">Join</Link>
+                                  
+                <Link href={`/gamePage/${randomGame.id}?name=${randomGame.name}`} className="rounded-lg text-white bg-green-500 hover:bg-green-600 focus:ring-2 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-4 py-2">Join</Link>
                             </p>
                     }
                 </div>

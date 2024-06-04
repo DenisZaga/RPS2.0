@@ -66,7 +66,7 @@ const GamePage = ({ params }) => {
       <Navbar />
       <div className="m-4">
         <div className="grid place-items-center">
-          <h1>{gameName}</h1>
+          <h1 className="text-3xl font-bold text-center mb-4">{gameName}</h1>
         </div>
         <div className="flex justify-center items-center m-5">
         {Object.values(players).slice(0, 2).map((player, index) => (
