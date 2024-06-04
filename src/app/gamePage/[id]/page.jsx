@@ -62,12 +62,11 @@ const GamePage = ({ params }) => {
       <Navbar />
       <div className="m-4">
         <div className="grid place-items-center">
-          
         </div>
         <div className="flex justify-center items-center m-5">
         {Object.values(players).slice(0, 2).map((player, index) => (
           <div key={player.id} className="flex items-center">
-            {index === 1 && <span className="mx-2 font-normal">VS</span>}
+            {index === 1 && <span className="mx-2 font-normal"> VS </span>}
             <span className="font-bold">{player.name}</span>
           </div>
         ))}

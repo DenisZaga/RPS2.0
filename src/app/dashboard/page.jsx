@@ -7,9 +7,11 @@ import UserInfo from "@/components/UserInfo"
 export default function Dashboard() {
 
     return <>
-    <Navbar/>
-    <UserInfo/>
-    <CreateGame />
-    <GameList />
+    <div>
+        <Navbar/>
+        <UserInfo/>
+        <CreateGame />
+        <GameList />
+    </div>
     </>;
 }
