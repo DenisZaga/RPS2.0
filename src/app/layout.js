@@ -6,7 +6,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Rock Paper Scissors",
- 
 };
 
 export default function RootLayout({ children }) {
