@@ -4,7 +4,7 @@ body {
     font-family: sans-serif;
   }
   
-  /* Контейнер для статистики */
+  
   .statistics__wrapper {
     display: flex;
     flex-direction: column;
@@ -13,21 +13,21 @@ body {
     padding-inline: 20px;
   }
   
-  /* Заголовок "Statistics" */
+
   .statistics__mainTitle {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    margin: 20px 0; /* Додано відступ знизу */
+    margin: 20px 0; 
   }
   
-  /* Блоки статистики */
+
   .statistics__randomGame,
   .statistics__completedGames,
   .statistics__bestPlayers,
   .statistics__worstPlayers {
-    background-color: white; /* Білий фон всередині рамки */
-    border: 1px solid #CCC; /* Сірий колір рамки */
+    background-color: white;
+    border: 1px solid #CCC; 
     padding: 20px;
     border-radius: 10px;
     width: 80%;
@@ -40,46 +40,46 @@ body {
     grid-template-columns: 30% 30% 30%;
 
   }
-  /* Вторинний заголовок у блоках статистики */
+ 
   .statistics__secondaryTitle {
     font-size: 2em;
     margin-bottom: 10px;
   }
   
-  /* Кнопка "Переглянути всі ігри" */
+
   .statistics__viewAllGamesButton {
     font-size: 25px;
-    color: white; /* Білий текст */
+    color: white; 
     cursor: pointer;
-    background-color: #22c55e; /* Зелений фон */
-    padding: 5px 12px; /* Внутрішній відступ */
+    background-color: #22c55e;
+    padding: 5px 12px; 
     border: none;
-    border-radius: 5px; /* Заокруглені кути */
-    display: block; /* Забезпечує блочне розміщення кнопки */
-    margin: 0 auto; /* Автоматично центрує кнопку по горизонталі */
+    border-radius: 5px; 
+    display: block; 
+    margin: 0 auto; 
     margin-bottom: 20px;
     transition: 0.5s;
   }
   
   .statistics__viewAllGamesButton:hover {
-    background-color: green; /* Темніший зелений колір при наведенні */
+    background-color: green; 
   }
   
-  /* Кнопка "Приєднатися" */
+
   .statistic__joinButton {
     cursor: pointer;
-    background-color: #22c55e; /* Зелений фон */
-    color: white; /* Білий текст */
-    padding: 5px 12px; /* Внутрішній відступ */
+    background-color: #22c55e;
+    color: white;
+    padding: 5px 12px; 
     border: none;
-    border-radius: 5px; /* Заокруглені кути */
-    font-size: 18px; /* Розмір шрифту */
-    font-weight: bold; /* Жирний шрифт */
-    transition: background-color 0.3s; /* Плавний перехід кольору при наведенні */
+    border-radius: 5px; 
+    font-size: 18px; 
+    font-weight: bold; 
+    transition: background-color 0.3s; 
   }
   
   .statistic__joinButton:hover {
-    background-color: green; /* Темніший зелений колір при наведенні */
+    background-color: green; 
   }
   
 
